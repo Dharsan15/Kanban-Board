@@ -15,7 +15,7 @@ const Backend = isMobile ? TouchBackend : HTML5Backend;
   return (
     <main>
       <Heading
-        fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }}
+        fontSize={{ base: '4xl', sm: '7xl', md: '5xl' }}
         fontWeight="bold"
         textAlign="center"
         bgGradient="linear(to-l, #7928CA, #FF0080)"
