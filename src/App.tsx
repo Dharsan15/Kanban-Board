@@ -1,5 +1,6 @@
 import {} from '@chakra-ui/icons';
 import { Container, Heading, SimpleGrid } from '@chakra-ui/react';
+import { TouchBackend } from 'react-dnd-touch-backend';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import Column from './components/Column';
@@ -7,6 +8,10 @@ import DarkModeIconButton from './components/DarkModeIconButton';
 import { ColumnType } from './utils/enums';
 
 function App() {
+
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const Backend = isMobile ? TouchBackend : HTML5Backend; 
+
   return (
     <main>
       <Heading
@@ -20,7 +25,7 @@ function App() {
         Welcome to Kanban Board
       </Heading>
       <DarkModeIconButton  />
-      <DndProvider backend={HTML5Backend} options={{ enableMouseEvents: true }}>
+      <DndProvider backend={Backend} options={{ enableMouseEvents: true }}>
         <Container maxWidth="container.lg" px={4} py={10}>
           <SimpleGrid
             columns={{ base: 1, md: 4 }}
