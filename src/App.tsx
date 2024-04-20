@@ -20,7 +20,7 @@ function App() {
         Welcome to Kanban Board
       </Heading>
       <DarkModeIconButton  />
-      <DndProvider backend={HTML5Backend}>
+      <DndProvider backend={HTML5Backend} options={{ enableMouseEvents: true }}>
         <Container maxWidth="container.lg" px={4} py={10}>
           <SimpleGrid
             columns={{ base: 1, md: 4 }}
@@ -38,3 +38,4 @@ function App() {
 }
 
 export default App;
+
